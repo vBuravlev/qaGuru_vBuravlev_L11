@@ -91,9 +91,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage someMethod()
+    public RegistrationPage someMethod(String fileName)
     {
-        log.info("Some message");
+        log.info(String.valueOf(uploadPictureInput.uploadFromClasspath(fileName)));
         return this;
     }
 

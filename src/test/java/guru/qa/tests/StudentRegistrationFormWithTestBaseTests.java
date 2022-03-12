@@ -49,7 +49,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setCurrentAddress(currentAddress)
                     .setHobbiesUser(hobbiesUser)
-                      .someMethod()
+                      .someMethod(fileName)
                     .uploadPicture(fileName)
                     .setSubjectsFull(subjectsFullText)
                     .setSubjectsShort(subjectsShortText, subjectsShortTextSelect)
