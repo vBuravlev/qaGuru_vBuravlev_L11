@@ -2,6 +2,10 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import guru.qa.pages.components.Calendar;
+import guru.qa.tests.StudentRegistrationFormWithTestBaseTests;
+
+
+import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -16,6 +20,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class RegistrationPage {
     private Calendar calendarComponent = new Calendar();
+    private static Logger log = Logger.getLogger(StudentRegistrationFormWithTestBaseTests.class.getName());
+
 
     private SelenideElement headerTitle = $(".practice-form-wrapper"),
             firstNameInput = $("#firstName"),
@@ -85,11 +91,11 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage pathFile(String fileName){
-        System.out.println(uploadPictureInput.uploadFromClasspath(fileName)+" путь");
+    public RegistrationPage someMethod()
+    {
+        log.info("Some message");
         return this;
     }
-
 
     public RegistrationPage uploadPicture(String fileName){
         try {

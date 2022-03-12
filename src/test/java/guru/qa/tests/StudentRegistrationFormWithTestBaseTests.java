@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 import guru.qa.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 
 import java.net.URISyntaxException;
 
@@ -48,7 +49,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setCurrentAddress(currentAddress)
                     .setHobbiesUser(hobbiesUser)
-                      .pathFile(fileName)
+                      .someMethod()
                     .uploadPicture(fileName)
                     .setSubjectsFull(subjectsFullText)
                     .setSubjectsShort(subjectsShortText, subjectsShortTextSelect)
