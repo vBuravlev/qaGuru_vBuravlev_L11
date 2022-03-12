@@ -26,8 +26,8 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     static String calendarDay = "14";  // "dd" format
     static String genderRoleName = "Male"; //"Male", "Female", "Other"
     static String path = "/home/jenkins/workspace/qaGuru_vBuravlev_L11/ws/build/resources/test/";
-    static String fileName = "/History.PNG";
-    static String fileName2 = "History.PNG";
+    static String fileName = "History.PNG";
+
     static String currentAddress = "Novosibirsk";
     static String textModalWindow = "Thanks for submitting the form";
     String[] hobbiesUser = new String[]{"Reading", "Sports", "Music"};  //"Reading", "Sports", "Music"
@@ -40,8 +40,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
 
 
         //input data in form
-        try {
-            registrationPage.openPage()
+              registrationPage.openPage()
                     .setFirstName(firstName)
                     .setLastName(lastName)
                     .setGender(genderRoleName)
@@ -56,9 +55,8 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                     .selectCity(cityName)
                     .setBirthDate(calendarDay, calendarMonth, calendarYear)
                     .openResultDataForm(textModalWindow);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+
+
 
         //checking the results in the registration form
         registrationPage
@@ -70,7 +68,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                 .checkForm("Subjects", subjectsFullText)
                 .checkForm("Subjects", subjectsShortTextSelect)
                 .checkFormIteration("Hobbies", hobbiesUser)
-                .checkForm("Picture", fileName2)
+                .checkForm("Picture", fileName)
                 .checkForm("Address", currentAddress)
                 .checkForm("State and City", stateName + " " + cityName)
                 .closeResultDataForm();

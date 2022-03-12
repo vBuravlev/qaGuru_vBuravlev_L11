@@ -99,16 +99,14 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage uploadPicture(String fileName) throws URISyntaxException {
-        uploadPictureInput.uploadFile(toLocalFile(fileName));
+    public RegistrationPage uploadPicture(String fileName) {
+        try {
+        uploadPictureInput.uploadFromClasspath(fileName);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(uploadPictureInput.uploadFromClasspath(fileName)+" путь");
+        }
         return this;
-    }
-
-    @Nonnull
-    @CheckReturnValue
-    private File toLocalFile(String fileName) throws URISyntaxException {
-        URL url = requireNonNull(getClass().getResource(fileName), () -> "Not found in classpath: " + fileName);
-        return new File(url.toURI());
     }
 
     public RegistrationPage setHobbiesUser(String[] hobbiesUser) {
