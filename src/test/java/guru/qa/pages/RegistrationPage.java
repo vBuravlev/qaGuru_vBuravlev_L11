@@ -23,6 +23,7 @@ public class RegistrationPage {
     private static Logger log = Logger.getLogger(StudentRegistrationFormWithTestBaseTests.class.getName());
 
 
+
     private SelenideElement headerTitle = $(".practice-form-wrapper"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -93,7 +94,7 @@ public class RegistrationPage {
 
     public RegistrationPage someMethod(String fileName)
     {
-        log.info(String.valueOf(uploadPictureInput.uploadFromClasspath(fileName)));
+        log.info(String.valueOf(StudentRegistrationFormWithTestBaseTests.class.getProtectionDomain().getCodeSource().getLocation().getPath()));
         return this;
     }
 
