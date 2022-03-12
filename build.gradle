@@ -8,7 +8,13 @@ repositories {
 }
 
 def allureVersion = "2.17.2",
-    junitVersion = "5.8.2"
+    junitVersion = "5.8.2",
+    jacksonDatabind = "2.10.3",
+    commons = "2.4",
+    assertj = "3.19.0",
+    selenide = "6.2.1",
+    slf4jSimple = "1.7.29",
+    recursiveAssertionAssertj = "1.0.1"
 
 allure {
     report {
@@ -26,17 +32,16 @@ allure {
 }
 
 dependencies {
-    implementation 'com.github.vladislavsevruk:recursive-assertion-assertj:1.0.1'
+    implementation "com.github.vladislavsevruk:recursive-assertion-assertj:$recursiveAssertionAssertj"
     testImplementation(
-            "com.codeborne:selenide:6.2.1",
-            'com.github.javafaker:javafaker:1.0.2',
-            "org.assertj:assertj-core:3.19.0",
-            'commons-io:commons-io:2.4',
-            "com.fasterxml.jackson.core:jackson-databind:2.10.3",
+            "com.codeborne:selenide:$selenide",
+            "org.assertj:assertj-core:$assertj",
+            "commons-io:commons-io:$commons",
+            "com.fasterxml.jackson.core:jackson-databind:$jacksonDatabind",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
-            "org.slf4j:slf4j-simple:1.7.29",
+            "org.slf4j:slf4j-simple:$slf4jSimple",
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
