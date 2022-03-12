@@ -23,7 +23,6 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     static String calendarMonth = "November"; // number of characters = 3
     static String calendarDay = "14";  // "dd" format
     static String genderRoleName = "Male"; //"Male", "Female", "Other"
-    static String path = "src/test/resources/";
     static String fileName = "History.PNG";
     static String currentAddress = "Novosibirsk";
     static String textModalWindow = "Thanks for submitting the form";
@@ -31,10 +30,8 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     static String stateName = "NCR";
     static String cityName = "Delhi";
 
-
     @Test
     void successTest() {
-
         //input data in form
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -44,7 +41,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                 .setUserNumber(userNumber)
                 .setCurrentAddress(currentAddress)
                 .setHobbiesUser(hobbiesUser)
-                .uploadPicture(path, fileName)
+                .uploadPicture(fileName)
                 .setSubjectsFull(subjectsFullText)
                 .setSubjectsShort(subjectsShortText, subjectsShortTextSelect)
                 .selectState(stateName)
