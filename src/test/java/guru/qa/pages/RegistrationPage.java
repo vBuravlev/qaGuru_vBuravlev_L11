@@ -3,27 +3,13 @@ package guru.qa.pages;
 import com.codeborne.selenide.SelenideElement;
 import guru.qa.pages.components.Calendar;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 import static java.util.Objects.requireNonNull;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import javax.annotation.CheckReturnValue;
-import javax.annotation.Nonnull;
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import static com.codeborne.selenide.Condition.text;
-import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -99,7 +85,13 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage uploadPicture(String fileName) {
+    public RegistrationPage pathFile(String fileName){
+        System.out.println(uploadPictureInput.uploadFromClasspath(fileName)+" путь");
+        return this;
+    }
+
+
+    public RegistrationPage uploadPicture(String fileName){
         try {
         uploadPictureInput.uploadFromClasspath(fileName);
         } catch (Exception e) {
