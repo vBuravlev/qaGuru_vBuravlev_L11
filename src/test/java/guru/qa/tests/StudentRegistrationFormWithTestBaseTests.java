@@ -26,7 +26,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     static String calendarMonth = "November"; // number of characters = 3
     static String calendarDay = "14";  // "dd" format
     static String genderRoleName = "Male"; //"Male", "Female", "Other"
-    static String path = "/src/resources/test/History.PNG";
+    static String path = "src/test/resources/History.PNG";
     static String fileName = "History.PNG";
     static String currentAddress = "Novosibirsk";
     static String textModalWindow = "Thanks for submitting the form";
