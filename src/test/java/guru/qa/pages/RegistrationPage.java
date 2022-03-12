@@ -82,8 +82,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage uploadPicture(String fileName) {
-        uploadPictureInput.uploadFromClasspath(fileName);
+    public RegistrationPage uploadPicture(String path, String fileName) {
+        uploadPictureInput.uploadFile(new File(path + fileName));
         return this;
     }
 
