@@ -1,14 +1,7 @@
 package guru.qa.tests;
 
-
-import com.codeborne.selenide.Configuration;
 import guru.qa.pages.RegistrationPage;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-
-import java.net.URISyntaxException;
-
 
 public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     //import
@@ -26,8 +19,6 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     static String calendarMonth = "November"; // number of characters = 3
     static String calendarDay = "14";  // "dd" format
     static String genderRoleName = "Male"; //"Male", "Female", "Other"
-    static String path = "src/test/resources/History.PNG";
-    static String fileName = "History.PNG";
     static String currentAddress = "Novosibirsk";
     static String textModalWindow = "Thanks for submitting the form";
     String[] hobbiesUser = new String[]{"Reading", "Sports", "Music"};  //"Reading", "Sports", "Music"
@@ -48,7 +39,6 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setCurrentAddress(currentAddress)
                     .setHobbiesUser(hobbiesUser)
-                  //  .uploadPicture(path)
                     .setSubjectsFull(subjectsFullText)
                     .setSubjectsShort(subjectsShortText, subjectsShortTextSelect)
                     .selectState(stateName)
@@ -68,7 +58,6 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                 .checkForm("Subjects", subjectsFullText)
                 .checkForm("Subjects", subjectsShortTextSelect)
                 .checkFormIteration("Hobbies", hobbiesUser)
-               // .checkForm("Picture", fileName)
                 .checkForm("Address", currentAddress)
                 .checkForm("State and City", stateName + " " + cityName)
                 .closeResultDataForm();
