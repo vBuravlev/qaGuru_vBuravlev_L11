@@ -48,7 +48,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                     .setUserNumber(userNumber)
                     .setCurrentAddress(currentAddress)
                     .setHobbiesUser(hobbiesUser)
-                    .uploadPicture(path)
+                  //  .uploadPicture(path)
                     .setSubjectsFull(subjectsFullText)
                     .setSubjectsShort(subjectsShortText, subjectsShortTextSelect)
                     .selectState(stateName)
@@ -68,7 +68,7 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
                 .checkForm("Subjects", subjectsFullText)
                 .checkForm("Subjects", subjectsShortTextSelect)
                 .checkFormIteration("Hobbies", hobbiesUser)
-                .checkForm("Picture", fileName)
+               // .checkForm("Picture", fileName)
                 .checkForm("Address", currentAddress)
                 .checkForm("State and City", stateName + " " + cityName)
                 .closeResultDataForm();
