@@ -5,6 +5,7 @@ import guru.qa.pages.components.Calendar;
 import guru.qa.tests.StudentRegistrationFormWithTestBaseTests;
 
 
+import java.io.File;
 import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Condition.*;
@@ -92,19 +93,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage someMethod(String fileName)
-    {
-        log.info(String.valueOf(StudentRegistrationFormWithTestBaseTests.class.getProtectionDomain().getCodeSource().getLocation().getPath()));
-        return this;
-    }
-
-    public RegistrationPage uploadPicture(String fileName){
-        try {
-        uploadPictureInput.uploadFromClasspath(fileName);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(uploadPictureInput.uploadFromClasspath(fileName)+" путь");
-        }
+    public RegistrationPage uploadPicture(String path){
+        uploadPictureInput.uploadFile(new File(path));
         return this;
     }
 
