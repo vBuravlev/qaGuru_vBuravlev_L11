@@ -20,11 +20,12 @@ public class TestBase {
         String password = System.getProperty("password");
         String browserSize = System.getProperty("browserSize");
         String remoteBrowser = System.getProperty("remoteBrowser");
+        String remote = System.getProperty("remote");
 
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://" + user + ":" + password + "@" + remoteBrowser;
+        Configuration.remote = remote;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
