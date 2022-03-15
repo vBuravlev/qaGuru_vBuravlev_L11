@@ -7,6 +7,9 @@ public class StudentRegistrationFormWithTestBaseTests extends TestBase {
     //import
     private RegistrationPage registrationPage = new RegistrationPage();
 
+
+
+
     //configuration parameters
     static String firstName = "StudentFirstName";
     static String lastName = "StudentLastName";
